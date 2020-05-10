@@ -4,7 +4,6 @@ import axios from 'axios'
 
 
 function getJsonFromUrl(url) {
-  if(!url) url = location.search;
   var query = url.substr(1);
   var result = {};
   query.split("&").forEach(function(part) {
