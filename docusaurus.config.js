@@ -1,16 +1,16 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://ncurl.github.io',
-  baseUrl: '/ncurl-web/',
+  title: 'NcURL - Next generation of cURL ',
+  tagline: 'Fully compatible with cURL. And with JSON support, syntax highlight, easy to share with others.',
+  url: 'https://ncurl.sh',
+  baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'ncurl', // Usually your GitHub org/user name.
   projectName: 'ncurl-web', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'NcURL',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'NcURL Logo',
         src: 'img/logo.svg',
       },
       links: [
@@ -22,7 +22,7 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/ncurl/ncurl',
           label: 'GitHub',
           position: 'right',
         },
@@ -49,7 +49,7 @@ module.exports = {
           items: [
             {
               label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              href: 'https://stackoverflow.com/questions/tagged/ncurl',
             },
             {
               label: 'Discord',
@@ -57,7 +57,7 @@ module.exports = {
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/ncurl',
             },
           ],
         },
@@ -75,7 +75,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} NcURL, Inc. Built with Docusaurus.`,
     },
   },
   presets: [
