@@ -20,7 +20,7 @@ function Instant(props) {
   const [data, setData] = useState({commands: [], response: ''});
 
   useEffect(() => {
-    axios.get('http://api.ncurl.sh/api/instants/' + id).then(result => {
+    axios.get('https://ncurl-server.herokuapp.com/api/instants/' + id).then(result => {
       console.log('result', result);
       setData({...result.data})
     });
