@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[24],{124:function(a){a.exports=JSON.parse('{"allTagsPath":"/ncurl-web/blog/tags","slug":"hola","name":"hola","count":1,"permalink":"/ncurl-web/blog/tags/hola"}')}}]);

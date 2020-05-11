@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{101:function(o){o.exports=JSON.parse('{"allTagsPath":"/ncurl-web/blog/tags","slug":"facebook","name":"facebook","count":1,"permalink":"/ncurl-web/blog/tags/facebook"}')}}]);
