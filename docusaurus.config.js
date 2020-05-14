@@ -6,6 +6,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'ncurl', // Usually your GitHub org/user name.
   projectName: 'ncurl-web', // Usually your repo name.
+  plugins: ['@docusaurus/plugin-google-gtag'],
   themeConfig: {
     navbar: {
       title: 'NcURL',
@@ -53,7 +54,7 @@ module.exports = {
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/ncurl',
+              href: 'https://twitter.com/ncurlsh',
             },
           ],
         },
@@ -72,6 +73,9 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} NcURL, Inc. Built with Docusaurus.`,
+    },
+    gtag: {
+        trackingID: 'UA-104688192-2',
     },
   },
   presets: [
