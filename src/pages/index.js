@@ -71,9 +71,13 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/doc1')}>
+              to={useBaseUrl('docs/getting-started-installation')}>
               Get Started
             </Link>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <iframe src="https://ghbtns.com/github-btn.html?user=ncurl&repo=ncurl&type=star&size=large"
+                      frameBorder="0" scrolling="0" width="170" height="30"
+                      title="Star ncurl/ncurl on GitHub"></iframe>
           </div>
         </div>
       </header>
