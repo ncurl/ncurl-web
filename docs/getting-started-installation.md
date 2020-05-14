@@ -4,11 +4,9 @@ title: Installation
 sidebar_label: Installation
 ---
 
-# Installation
-
 ## macOS
 
-On macOS, NcURL can be installed via [https://brew.sh/](Homebrew) (recommended):
+On macOS, NcURL can be installed via [Homebrew](https://brew.sh/) (recommended):
 
 ```console
 $ brew tap ncurl/ncurl
