@@ -8,32 +8,32 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Easy to Use</>,
+    title: <>Fully compatible with cURL</>,
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+          NcURL support all cURL options, just change command `curl` to `ncurl`.
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
+    title: <>JSON support & syntax highlight</>,
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+          NcURL support JSON parsing, syntax highlight.
+          More easier to read and understand.
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
+    title: <>Easy to share with others</>,
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+          NcURL can share with others through the website,
+          make it easier to communicate and understand.
+          And could manage requests on the website.
       </>
     ),
   },
@@ -59,8 +59,8 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="NcURL - Next generation of cURL. Fully compatible with cURL. And with JSON support, syntax highlight, easy to share with others.">
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
