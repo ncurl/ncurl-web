@@ -15,7 +15,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/doc1',
+          to: 'docs/getting-started-installation',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -35,12 +35,8 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/doc1',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2',
+              label: 'Getting Started',
+              to: 'docs/getting-started-installation',
             },
           ],
         },
