@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import axios from 'axios'
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
 function getJsonFromUrl(url) {
@@ -17,7 +19,7 @@ function getJsonFromUrl(url) {
 function Instant(props) {
   console.log('props', props)
   const { id } = getJsonFromUrl(props.location.search)
-  const [data, setData] = useState({commands: [], response: ''});
+  const [data, setData] = useState({commands: [], contents: ''});
 
   useEffect(() => {
     axios.get('https://ncurl-server.herokuapp.com/api/instants/' + id).then(result => {
@@ -28,12 +30,15 @@ function Instant(props) {
   return (
     <Layout title="Share">
       <div>
-          <pre>
+          <SyntaxHighlighter language="bash" style={docco}>
             {data.commands.join(' ')}
-          </pre>
-          <pre>
-            {data.response}
-          </pre>
+          </SyntaxHighlighter>
+          {
+            data.contents && data.contents.map((content, index) => (<SyntaxHighlighter language={content.highlightName} style={docco} key={index}>
+            {content.content}
+          </SyntaxHighlighter>))
+          }
+          
       </div>
     </Layout>
   );
