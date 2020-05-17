@@ -15,6 +15,7 @@
     "classnames": "^2.2.6",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-json-view": "^1.19.1",
     "react-syntax-highlighter": "^12.2.1"
   },
   "browserslist": {
