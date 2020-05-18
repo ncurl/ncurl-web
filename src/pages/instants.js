@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import axios from 'axios'
-import ReactJson from 'react-json-view'
+import JSONTree from 'react-json-tree'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
@@ -37,7 +37,7 @@ function Instant(props) {
           {
             data.contents && data.contents.map((content, index) => {
               if (content.highlightName == 'json') {
-                return <ReactJson src={JSON.parse(content.content)} key={index} />
+                return <JSONTree data={JSON.parse(content.content)} key={index} />
               } else {
                 return (<SyntaxHighlighter language={content.highlightName} style={docco} key={index}>
                   {content.content}

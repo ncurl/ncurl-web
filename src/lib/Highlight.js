@@ -1,40 +1,10 @@
-import React, { Component } from 'react';
-import hljs from 'highlight.js/lib/highlight';
-import javascript from 'highlight.js/lib/languages/javascript';
+import dynamic from 'next/dynamic'
 
-hljs.registerLanguage('javascript', javascript);
-import 'highlight.js/styles/github.css';
-
-class Highlight extends Component {
-    constructor(props) {
-        super(props);
-        this.nodeRef = React.createRef();
+const DynamicJsonViwer = dynamic(
+    import('react-json-view'),
+    {
+      ssr: false   //这个要加上,禁止使用 SSR
     }
-
-    componentDidMount() {
-        this.highlight();
-    }
-
-    componentDidUpdate() {
-        this.highlight();
-    }
-
-    highlight = () => {
-        if (this.nodeRef) {
-            const nodes = this.nodeRef.current.querySelectorAll('pre');
-            nodes.forEach((node) => {
-                hljs.highlightBlock(node);
-            });
-        }
-    }
-
-    render() {
-        const { content } = this.props;
-        return (
-            <div ref={this.nodeRef} dangerouslySetInnerHTML={{ __html: content }} />
-        );
-    }
-}
-
-
-export default Highlight;
+  )
+  
+  export default () => <DynamicJsonViwer />
