@@ -4,6 +4,7 @@ import axios from 'axios'
 import JSONTree from 'react-json-tree'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 
 function getJsonFromUrl(url) {
@@ -32,7 +33,7 @@ function Instant(props) {
     <Layout title="Share">
       <div>
           <SyntaxHighlighter language="bash" style={docco}>
-            {data.commands.join(' ')}
+            {decodeURIComponent(data.commands)}
           </SyntaxHighlighter>
           {
             data.contents && data.contents.map((content, index) => {
