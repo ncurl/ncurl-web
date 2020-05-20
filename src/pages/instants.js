@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import axios from 'axios'
 import JSONTree from 'react-json-tree'
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import Highlight from '@theme/CodeBlock';
+import useThemeContext from '@theme/hooks/useThemeContext'; 
 
 
 function getJsonFromUrl(url) {
@@ -18,9 +18,9 @@ function getJsonFromUrl(url) {
 
 function prettyCurl(commands) {
   commands = decodeURIComponent(commands)
-  commands = commands.replace(/ -H '/g, '\n-H \'')
+  commands = commands.replace(/ -H '/g, ' \\\n-H \'')
   commands = commands.replace(/--data-binary/, '\n--data-binary')
-  return `$ ${commands}`
+  return commands ? `$ ${commands}` : ""
 }
 
 const theme = {
@@ -49,6 +49,8 @@ function Instant(props) {
   console.log('props', props)
   const { id } = getJsonFromUrl(props.location.search)
   const [data, setData] = useState({commands: [], contents: [], bodyCommand: null});
+  const {isDarkTheme} = useThemeContext();
+  console.log('isDarkTheme', isDarkTheme)
 
   useEffect(() => {
     axios.get('https://ncurl-server.herokuapp.com/api/instants/' + id).then(result => {
@@ -56,27 +58,21 @@ function Instant(props) {
       const bodyCommand = result.data.contents.find(content => content.highlightName == 'json')
       setData({bodyCommand, ...result.data})
     });
-  }, ['id']);
+  }, ['id', 'isDarkTheme']);
   return data.bodyCommand ? (
     <Layout title="Share">
       <div>
         <div className="row row-block">
           <div className="col col--6 command-div">
-            <SyntaxHighlighter language="bash" 
-              style={github}
-              wrapLines={true}
-              customStyle={lineNumber => {return {wordBreak: "break-all", whiteSpace: "normal"}}}
-              >
+            <Highlight language="bash">
               {prettyCurl(data.commands)}
-            </SyntaxHighlighter>
-            {
-              data.contents && data.contents.map((content, index) => (<SyntaxHighlighter language={content.highlightName} style={github} key={index}>
-                {content.content}
-              </SyntaxHighlighter>))
-            }
+            </Highlight>
+            <Highlight>
+              {data.contents.map(content => content.content).join('\n')}
+            </Highlight>
           </div>
           <div className="col col--5 div-block">
-            <JSONTree data={JSON.parse(data.bodyCommand.content)} theme={theme} invertTheme hideRoot />
+            <JSONTree data={JSON.parse(data.bodyCommand.content)} theme={theme} invertTheme={!isDarkTheme} />
           </div>
           <div className="col col--1 div-block"></div>
         </div>
@@ -88,14 +84,12 @@ function Instant(props) {
       <div>
         <div className="row row-block">
           <div className="col col--6 div-block">
-            <SyntaxHighlighter language="bash" style={github}>
+            <Highlight language="bash">
               {prettyCurl(data.commands)}
-            </SyntaxHighlighter>
-            {
-              data.contents && data.contents.map((content, index) => (<SyntaxHighlighter language={content.highlightName} style={github} key={index}>
-                {content.content}
-              </SyntaxHighlighter>))
-            }
+            </Highlight>
+            <Highlight>
+              {data.contents.map(content => content.content).join('\n')}
+            </Highlight>
           </div>
           <div className="col col--1 row-block"></div>
         </div>
