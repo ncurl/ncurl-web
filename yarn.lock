@@ -7533,6 +7533,13 @@ react-toggle@^4.1.1:
   dependencies:
     classnames "^2.2.5"
 
+react-treeview@^0.4.7:
+  version "0.4.7"
+  resolved "https://registry.npm.taobao.org/react-treeview/download/react-treeview-0.4.7.tgz#f647e04f70496eb11fb0912c35187e80eb60d458"
+  integrity sha1-9kfgT3BJbrEfsJEsNRh+gOtg1Fg=
+  dependencies:
+    prop-types "^15.5.8"
+
 react@^16.8.4:
   version "16.13.1"
   resolved "https://registry.npm.taobao.org/react/download/react-16.13.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact%2Fdownload%2Freact-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
