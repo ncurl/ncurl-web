@@ -20,6 +20,7 @@ function prettyCurl(commands) {
   commands = decodeURIComponent(commands)
   commands = commands.replace(/ -H '/g, ' \\\n-H \'')
   commands = commands.replace(/--data-binary/, '\n--data-binary')
+  commands = commands.replace(/--data/, '\n--data')
   return commands ? `$ ${commands}` : ""
 }
 
@@ -68,7 +69,7 @@ function Instant(props) {
               {prettyCurl(data.commands)}
             </Highlight>
             <Highlight>
-              {data.contents.map(content => content.content).join('\n')}
+              {data.contents.map(content => content.content).join('\n\n')}
             </Highlight>
           </div>
           <div className="col col--5 div-block">
@@ -88,7 +89,7 @@ function Instant(props) {
               {prettyCurl(data.commands)}
             </Highlight>
             <Highlight>
-              {data.contents.map(content => content.content).join('\n')}
+              {data.contents.map(content => content.content).join('\n\n')}
             </Highlight>
           </div>
           <div className="col col--1 row-block"></div>
