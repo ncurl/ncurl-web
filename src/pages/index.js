@@ -9,10 +9,11 @@ import styles from './styles.module.css';
 const features = [
   {
     title: <>Fully compatible with cURL</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    imageUrl: 'img/curl-logo.svg',
     description: (
       <>
-          NcURL support all cURL options, just change command `curl` to `ncurl`.
+          NcURL support all <code>curl</code> options, just change command <code>curl</code> to <code>ncurl</code>.
+          More easier to convert with browser debugging tools and other HTTP request tools (such as <em>Postman</em>).
       </>
     ),
   },
