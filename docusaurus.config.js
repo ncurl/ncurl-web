@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Fully compatible with cURL. And with JSON support, syntax highlight, easy to share with others.',
   url: 'https://ncurl.sh',
   baseUrl: '/',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
   organizationName: 'ncurl', // Usually your GitHub org/user name.
   projectName: 'ncurl-web', // Usually your repo name.
   plugins: ['@docusaurus/plugin-google-gtag'],
